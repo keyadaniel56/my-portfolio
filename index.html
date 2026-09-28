@@ -628,6 +628,52 @@
       gap: var(--spacing-20);
     }
 
+    .projects-grid.grid-tight {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: var(--spacing-16);
+    }
+    .grid-tight .proj-card {
+      padding: var(--spacing-20);
+      gap: var(--spacing-10);
+    }
+    .grid-tight .proj-icon { width: 30px; height: 30px; font-size: 12px; }
+    .grid-tight .proj-name { font-size: 14px; }
+    .grid-tight .proj-desc { font-size: 13px; }
+    .grid-tight .proj-foot { padding-top: var(--spacing-10); }
+
+    .sub-title {
+      font-size: 15px;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-fey-white);
+      letter-spacing: -0.02em;
+      margin: var(--spacing-42) 0 var(--spacing-20);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-14);
+    }
+    .sub-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--color-fey-smoke);
+    }
+
+    .more-link {
+      margin-top: var(--spacing-32);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-10);
+      font-size: var(--text-body);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-fey-white);
+      text-decoration: none;
+      border: 1px solid var(--color-fey-smoke);
+      border-radius: var(--radius-buttons);
+      padding: var(--spacing-10) var(--spacing-18);
+      transition: border-color 0.22s, transform 0.22s;
+    }
+    .more-link:hover { border-color: var(--color-fey-mist); transform: translateY(-2px); }
+
     .proj-card {
       border: 1px solid var(--color-fey-smoke);
       border-radius: var(--radius-cards);
@@ -1026,10 +1072,10 @@
     <div class="proj-card">
       <div class="proj-head">
         <div class="proj-icon"><i class="fa-solid fa-bolt"></i></div>
-        <a href="https://instadoh.netlify.app" target="_blank" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="https://instadoh.netlify.app" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="proj-name">Instadoh</div>
-      <div class="proj-desc">Cross-border money payment system on the Lightning Network. Fast, low-fee international transfers using Bitcoin's layer-2 protocol.</div>
+      <div class="proj-desc">Cross-border payments between Kenya and Uganda, bridging mobile money (M-Pesa, MTN, Airtel) with the Bitcoin Lightning Network. Instant settlement, near-zero fees.</div>
       <div class="proj-foot">
         <div class="lang-dot"></div>
         <span class="lang-lbl">Go</span>
@@ -1041,7 +1087,7 @@
     <div class="proj-card">
       <div class="proj-head">
         <div class="proj-icon"><i class="fa-solid fa-comments"></i></div>
-        <a href="https://github.com/keyadaniel56/golang-chatapp" target="_blank" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="https://github.com/keyadaniel56/golang-chatapp" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="proj-name">golang-chatapp</div>
       <div class="proj-desc">Real-time chat application using WebSockets in Go. Supports multiple concurrent users with low-latency message delivery.</div>
@@ -1056,13 +1102,13 @@
     <div class="proj-card">
       <div class="proj-head">
         <div class="proj-icon"><i class="fa-solid fa-image"></i></div>
-        <a href="https://github.com/keyadaniel56/Image-Processing-Service" target="_blank" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="https://github.com/keyadaniel56/Image-Processing-Service" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="proj-name">Image Processing Service</div>
-      <div class="proj-desc">Cloudinary-like backend in Go. Upload, transform, and retrieve images via a clean REST API — similar to production media pipelines.</div>
+      <div class="proj-desc">Cloudinary-like media backend. User auth, image upload, transformations, and retrieval in multiple formats through a clean API — modelled on production media pipelines.</div>
       <div class="proj-foot">
         <div class="lang-dot"></div>
-        <span class="lang-lbl">Go</span>
+        <span class="lang-lbl">JavaScript</span>
         <span class="tag">REST API</span>
         <span class="tag">Media</span>
       </div>
@@ -1071,7 +1117,7 @@
     <div class="proj-card">
       <div class="proj-head">
         <div class="proj-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <a href="https://algocdk-1.onrender.com" target="_blank" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="https://algocdk-1.onrender.com" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="proj-name">Algocdk</div>
       <div class="proj-desc">Algorithmic trading platform that is community based designed specifically for deriv</div>
@@ -1086,7 +1132,7 @@
     <div class="proj-card">
       <div class="proj-head">
         <div class="proj-icon"><i class="fa-solid fa-check-double"></i></div>
-        <a href="https://github.com/keyadaniel56/todo-app-pgxpool" target="_blank" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="https://github.com/keyadaniel56/todo-app-pgxpool" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="proj-name">todo-app-pgxpool</div>
       <div class="proj-desc">Todo app demonstrating production-grade PostgreSQL connection pooling with pgxpool — a practical DB architecture reference in Go.</div>
@@ -1101,19 +1147,327 @@
     <div class="proj-card">
       <div class="proj-head">
         <div class="proj-icon"><i class="fa-solid fa-calendar-days"></i></div>
-        <a href="https://github.com/keyadaniel56/leave-management-system" target="_blank" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <a href="https://github.com/keyadaniel56/leave-management-system" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="proj-name">Leave Management</div>
-      <div class="proj-desc">Full-stack system to track employee leave across an organisation. Built with Laravel — handles requests, approvals, and reporting.</div>
+      <div class="proj-desc">Full-stack Laravel 13 system to track employee leave. Role-based access, approvals, and reporting — with a Sanctum REST API and Reverb WebSocket notifications.</div>
       <div class="proj-foot">
         <div class="lang-dot"></div>
-        <span class="lang-lbl">PHP / Laravel</span>
+        <span class="lang-lbl">Laravel / PHP</span>
         <span class="tag">CRUD</span>
         <span class="tag">HR</span>
       </div>
     </div>
 
   </div>
+
+  <h3 class="sub-title">More from the lab</h3>
+
+  <div class="projects-grid grid-tight fade-in">
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-cloud-bolt"></i></div>
+        <a href="https://github.com/keyadaniel56/smart-anga" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">Smart Anga</div>
+      <div class="proj-desc">Climate risk intelligence and disaster resilience platform. Real-time flood and drought monitoring, SME continuity planning, and incident command dispatch.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">React / Go</span>
+        <span class="tag">Climate</span>
+        <span class="tag">Full-stack</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <a href="https://github.com/keyadaniel56/deriv-third-party-site" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">TradersUnit</div>
+      <div class="proj-desc">Third-party Deriv trading workspace on the official Deriv API. Live market streaming, market scanner, charting, and free bot strategy templates.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">TypeScript</span>
+        <span class="tag">Trading</span>
+        <span class="tag">API</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-tractor"></i></div>
+        <a href="https://github.com/keyadaniel56/Agrismart" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">AgriSmart</div>
+      <div class="proj-desc">Farm intelligence PWA for smallholder farmers. Crop tracking, expense monitoring, profit analysis, and marketplace access, with offline support.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">JavaScript</span>
+        <span class="tag">PWA</span>
+        <span class="tag">Agriculture</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-user-shield"></i></div>
+        <a href="https://github.com/keyadaniel56/go-sentry" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">go-sentry</div>
+      <div class="proj-desc">Reusable auth package for Gin APIs. Drop-in JWT, OAuth2, hashed API keys, Basic Auth, and sessions — generic over any user model.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">Go</span>
+        <span class="tag">Auth</span>
+        <span class="tag">Gin</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <a href="https://github.com/keyadaniel56/mango-tree-management-system" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">Mango Tree School</div>
+      <div class="proj-desc">Multi-branch school management system. Admissions, fees, exams, results, mobile attendance, and SMS plus voice notifications.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">Laravel</span>
+        <span class="tag">ERP</span>
+        <span class="tag">Full-stack</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-robot"></i></div>
+        <a href="https://github.com/keyadaniel56/osama" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">Deriv Bots</div>
+      <div class="proj-desc">A collection of automated Deriv trading bots. Accumulator bot with anti-knockout protection, multi-market execution, and live dashboards.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">Python</span>
+        <span class="tag">Automation</span>
+        <span class="tag">Trading</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <a href="https://github.com/keyadaniel56/algotrading" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">AI Even-Odd Bot</div>
+      <div class="proj-desc">Predicts even/odd outcomes using Hidden Markov Models. Loads historical data, executes trades automatically, and logs every run to CSV.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">Python</span>
+        <span class="tag">HMM</span>
+        <span class="tag">Automation</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-people-group"></i></div>
+        <a href="https://github.com/keyadaniel56/solution-ground-ministry" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">Solution Ground</div>
+      <div class="proj-desc">Ministry platform built on a Go API, with separate member, pastor, and youth dashboards plus registration and auth flows.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">TypeScript / Go</span>
+        <span class="tag">Full-stack</span>
+        <span class="tag">Auth</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-spa"></i></div>
+        <a href="https://github.com/keyadaniel56/mresh" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">Mresh Beauty</div>
+      <div class="proj-desc">Website for Mresh beauty salon — service gallery, treatment imagery, and appointment experience. Dockerised and deployed via Render.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">TypeScript</span>
+        <span class="tag">Web</span>
+        <span class="tag">Docker</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-cubes"></i></div>
+        <a href="https://github.com/keyadaniel56/tetris-optimizer" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">Tetris Optimizer</div>
+      <div class="proj-desc">Models tetrominoes and works out optimal placements against a board state. Dockerised, with dedicated run and test scripts.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">Go</span>
+        <span class="tag">Algorithms</span>
+        <span class="tag">CLI</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-align-left"></i></div>
+        <a href="https://github.com/keyadaniel56/ascii-art-web" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">ASCII Art Web</div>
+      <div class="proj-desc">Web app that turns text into ASCII banner art, with standard, shadow, and thinkertoy styles. One command to run locally.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">Go</span>
+        <span class="tag">Web</span>
+        <span class="tag">CLI</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-file-lines"></i></div>
+        <a href="https://github.com/keyadaniel56/file-sharing-app" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">File Sharing App</div>
+      <div class="proj-desc">A simple file sharing service built on golang-gin — upload, store, and serve files over plain HTTP.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">Go / Gin</span>
+        <span class="tag">HTTP</span>
+        <span class="tag">API</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-terminal"></i></div>
+        <a href="https://github.com/keyadaniel56/go-reloaded" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">go-reloaded</div>
+      <div class="proj-desc">Modular text-processing tool. Reads a file, applies transformations — (cap), (up), (hex), (bin), a/an fixing — and writes the result out.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">Go</span>
+        <span class="tag">Text</span>
+        <span class="tag">CLI</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-folder-tree"></i></div>
+        <a href="https://github.com/keyadaniel56/my-ls-1" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">my-ls</div>
+      <div class="proj-desc">A from-scratch reimplementation of the Unix ls command, including the -l, -R, -a, -r, and -t flags.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">Go</span>
+        <span class="tag">CLI</span>
+        <span class="tag">Systems</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-list-check"></i></div>
+        <a href="https://github.com/keyadaniel56/task-tracker" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">Task Tracker</div>
+      <div class="proj-desc">Command-line task tracker: record what is to do, what is in progress, and what is done, without leaving the terminal.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">Go</span>
+        <span class="tag">CLI</span>
+        <span class="tag">Productivity</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <a href="https://github.com/keyadaniel56/authmiddleware" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">authmiddleware</div>
+      <div class="proj-desc">How to build authentication middleware in Go, with reusable request-context and role-checking patterns.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">Go</span>
+        <span class="tag">Auth</span>
+        <span class="tag">Patterns</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-vial"></i></div>
+        <a href="https://github.com/keyadaniel56/gin-quickstart" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">Gin Quickstart</div>
+      <div class="proj-desc">Clean Gin starter with templates embedded via go:embed, static asset serving, favicon handling, and Docker-ready structure.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">Go</span>
+        <span class="tag">Gin</span>
+        <span class="tag">Template</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-code"></i></div>
+        <a href="https://github.com/keyadaniel56/golang-context" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">Go Context</div>
+      <div class="proj-desc">From first principles to advanced patterns: how context propagates, cancellation, deadlines, and avoiding goroutine leaks.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">Go</span>
+        <span class="tag">Concurrency</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <a href="https://github.com/keyadaniel56/golang-channels" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">Go Channels</div>
+      <div class="proj-desc">Channels from beginner to advanced — buffered versus unbuffered, select, closing semantics, and common concurrency pitfalls.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">Go</span>
+        <span class="tag">Concurrency</span>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-head">
+        <div class="proj-icon"><i class="fa-solid fa-address-book"></i></div>
+        <a href="https://github.com/keyadaniel56/leet-01" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="proj-name">leet-01</div>
+      <div class="proj-desc">An interview and hiring page designed for Zone01 Kisumu.</div>
+      <div class="proj-foot">
+        <div class="lang-dot"></div>
+        <span class="lang-lbl">HTML</span>
+        <span class="tag">Web</span>
+      </div>
+    </div>
+
+  </div>
+
+  <a href="https://github.com/keyadaniel56?tab=repositories" target="_blank" rel="noopener" class="more-link">
+    <i class="fa-brands fa-github"></i> Browse all 40 repositories on GitHub
+    <i class="fa-solid fa-arrow-right"></i>
+  </a>
 </section>
 
 <hr class="divider" />
