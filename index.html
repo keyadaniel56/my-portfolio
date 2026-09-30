@@ -201,7 +201,29 @@
       margin: 0 auto;
     }
 
-    .hero-content { max-width: 640px; }
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      height: 100%;
+      z-index: 0;
+      border: 0;
+      pointer-events: none;
+      background: var(--surface-canvas);
+    }
+
+    .hero-scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(100deg, var(--surface-canvas) 6%, rgba(11, 11, 11, 0.86) 34%, rgba(11, 11, 11, 0.28) 68%, rgba(11, 11, 11, 0.55) 100%);
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 640px; }
 
     .hero-eyebrow {
       font-size: 11px;
@@ -309,6 +331,7 @@
 
     .hero-visual {
       position: relative;
+      z-index: 2;
       width: 100%;
       max-width: 460px;
       margin-top: var(--spacing-40);
@@ -334,25 +357,6 @@
       border-radius: 60px;
       z-index: 0;
       pointer-events: none;
-    }
-
-    .hero-embed {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      margin-bottom: var(--spacing-24);
-      background: var(--color-fey-obsidian);
-      border: 1px solid var(--color-fey-smoke);
-      border-radius: var(--radius-cards);
-      overflow: hidden;
-      box-shadow: var(--shadow-xl);
-    }
-    .hero-embed iframe {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: 0;
     }
 
     .showcase {
@@ -866,6 +870,9 @@
       }
       .hero-content { max-width: 100%; }
       .hero-visual { margin-top: var(--spacing-40); }
+      .hero-scrim {
+        background: linear-gradient(180deg, rgba(11, 11, 11, 0.9) 0%, rgba(11, 11, 11, 0.45) 45%, rgba(11, 11, 11, 0.9) 100%);
+      }
     }
 
     @media (max-width: 640px) {
@@ -894,6 +901,15 @@
 </nav>
 
 <div class="hero">
+  <iframe
+    class="hero-bg"
+    src="https://my.spline.design/rotatinginteractiveherosection-wxdbEWzzxMniac81te2axlLU/"
+    title="Interactive 3D hero scene"
+    loading="eager"
+    allowfullscreen
+  ></iframe>
+  <div class="hero-scrim" aria-hidden="true"></div>
+
   <div class="hero-content">
     <div class="hero-eyebrow">
       <img src="cdkprofile.jpeg" alt="Daniel Keya" class="eyebrow-avatar" width="28" height="28" />
@@ -920,14 +936,6 @@
   </div>
 
   <div class="hero-visual">
-    <div class="hero-embed">
-      <iframe
-        src="https://my.spline.design/rotatinginteractiveherosection-wxdbEWzzxMniac81te2axlLU/"
-        title="Interactive 3D hero scene"
-        loading="lazy"
-        allowfullscreen
-      ></iframe>
-    </div>
     <div class="showcase" role="region" aria-roledescription="carousel" aria-label="Portfolio highlights">
       <div class="showcase-chrome">
         <div class="tdot"></div>
